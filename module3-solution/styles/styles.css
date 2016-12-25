@@ -68,6 +68,6 @@ table {
 }
 .emptyMessage {
   color: red;
-  position: relative;
-  top: 180px;
+  margin-left: 5px; 
+  margin-top: 20px;
 }
