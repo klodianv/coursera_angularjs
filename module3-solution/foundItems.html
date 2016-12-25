@@ -1,0 +1,10 @@
+<div style="position: absolute; top: 160px;">
+  <table>
+    <tr ng-repeat="item in menu.items" class="table-margins">
+      <td class="table-margins">{{ item.name }}</td>
+      <td class="table-margins">{{ item.short_name }}</td>
+      <td class="table-margins">{{ item.description }}</td>
+      <td class="table-margins" width="160px"><button ng-click="menu.onRemove({index: $index});">Don't want this one!</button></td>
+    </tr>
+  </table>
+</div>
