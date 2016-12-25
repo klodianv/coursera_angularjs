@@ -50,3 +50,24 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+table {
+    float: left;
+}
+.table-margins {
+  margin-left: 5px;
+  margin-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  align-content: center;
+  vertical-align: middle;
+  border: solid;
+  border-width: thin;
+  border-color: blue;
+}
+.emptyMessage {
+  color: red;
+  position: absolute;
+  top: 160px;
+}
