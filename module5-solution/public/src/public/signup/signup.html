@@ -1,0 +1,56 @@
+<div id="signup-view" class="container" ng-controller="SignupController as signup">
+
+  <fieldset>
+      <legend>Newsletter Sign Up Form</legend>
+      <p>Please, fill in the following information to receive the restaurant's newsletter: </p>
+      <form name='signupForm' novalidate>
+
+        <input type="text" name="firstname" placeholder="Enter your first name"
+          ng-model="signup.firstname" required>
+          <span style="color: red;"
+            ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">
+            First name is required
+          </span>
+          <br>
+
+        <input type="text" name="lastname" placeholder="Enter your last name"
+            ng-model="signup.lastname" required>
+            <span style="color: red;"
+              ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">
+              Last name is required
+            </span>
+            <br>
+
+        <input type="email" name="email" placeholder="Enter your email address"
+          ng-model="signup.email" required>
+          <span ng-if="signupForm.email.$invalid && signupForm.email.$touched" style="color: red;">
+            Value must be a valid email: address@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Enter your phone nr as: ###-###-####"
+          ng-model="signup.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched" style="color: red;">
+            Phone number must be in the format: ###-###-####.
+          </span>
+          <br>
+
+        <input type="text" name="dishnumber" placeholder="Enter your favorite dish menu number"
+            ng-model="signup.dishNumber">
+            <span ng-if="signup.noMenuNumberExists" style="color: red;">
+              No such menu number exists
+            </span>
+          <br>
+
+        <button
+          ng-disabled="signupForm.$invalid"
+          ng-click="signup.submit()">Submit</button>
+      </form>
+    </fieldset>
+
+    <div id="info" ng-if="signup.completed && !(signup.noMenuNumberExists)">
+      Your information has been saved
+    </div>
+
+</div>

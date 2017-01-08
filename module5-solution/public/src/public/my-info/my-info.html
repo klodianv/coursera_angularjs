@@ -1,0 +1,33 @@
+<div id="myinfo-view" class="container" ng-controller="MyinfoController as myinfo">
+  <div class="text-center" ng-if="myinfo.signedup">
+    <h2 class="text-center">You are a registered user</h2>
+    <br>
+    <p><u>First name</u>: <span class="regUser">{{ myinfo.firstname }}</span></p>
+    <p><u>Last name</u>: <span class="regUser">{{ myinfo.lastname }}</span></p>
+    <p><u>Email</u>: <span class="regUser">{{ myinfo.email }}</span></p>
+    <p><u>Phone number</u>: <span class="regUser">{{ myinfo.phone }}</span></p>
+    <p><u>Favorite dish</u>:</p>
+      <div class="menu-item-tile col-md-6">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <div>{{ myinfo.dishNumber }}</div>
+              <img class="img-responsive" width="250" height="150" ng-src="{{myinfo.basePath}}/images/{{myinfo.dishNumber}}.jpg" alt="{{myinfo.dishName}}"></img>
+            </div>
+          </div>
+          <div class="menu-item-description col-sm-6">
+            <h3 class="menu-item-title">{{myinfo.dishName}}</h3>
+            <p class="menu-item-details">{{myinfo.dishDescr}}</p>
+          </div>
+        </div>
+        <hr class="visible-xs"></hr>
+      </div>
+  </div>
+
+  <div class="text-center" ng-if="!(myinfo.signedup)">
+    <h2 class="text-center" style="color: darkgray; font-weight: bolder;">Not Signed Up Yet.
+        <a ui-sref="public.signup" style="color: blue; font-weight: bolder;">Sign up Now!</a>
+    </h2>
+  </div>
+
+</div>
